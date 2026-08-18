@@ -1,0 +1,51 @@
+<div class="container">
+  <a class="brand" href="index.html" aria-label="つむぎ工務店 トップページへ">
+    <svg class="brand__mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.4" opacity="0.35"/>
+      <path d="M8 20C8 20 13 12 20 12C27 12 32 20 32 20C32 20 27 28 20 28C13 28 8 20 8 20Z" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M8 20C13 24 16 16 20 20C24 24 27 16 32 20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="20" cy="20" r="2.4" fill="currentColor"/>
+    </svg>
+    <span class="brand__name">つむぎ工務店<small>TSUMUGI KOUMUTEN</small></span>
+  </a>
+
+  <nav class="nav-desktop" aria-label="メインナビゲーション">
+    <ul class="nav-desktop__list">
+      <li><a class="nav-desktop__link" data-nav-link="about" href="about.html">会社概要</a></li>
+      <li><a class="nav-desktop__link" data-nav-link="works" href="works.html">施工事例</a></li>
+      <li><a class="nav-desktop__link" data-nav-link="services" href="services.html">サービス</a></li>
+      <li><a class="nav-desktop__link" data-nav-link="voice" href="voice.html">お客様の声</a></li>
+      <li><a class="nav-desktop__link" data-nav-link="blog" href="blog.html">ブログ</a></li>
+    </ul>
+    <a class="btn btn--primary" href="contact.html" data-nav-link="contact">
+      お問い合わせ
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </nav>
+
+  <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="メニューを開く">
+    <span class="hamburger__box">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </span>
+  </button>
+</div>
+
+<div class="mobile-nav" id="mobile-nav">
+  <nav aria-label="モバイルメニュー">
+    <ul class="mobile-nav__list">
+      <li class="mobile-nav__item"><a class="mobile-nav__link" data-nav-link="home" href="index.html"><span class="num">00</span>ホーム</a></li>
+      <li class="mobile-nav__item"><a class="mobile-nav__link" data-nav-link="about" href="about.html"><span class="num">01</span>会社概要</a></li>
+      <li class="mobile-nav__item"><a class="mobile-nav__link" data-nav-link="works" href="works.html"><span class="num">02</span>施工事例</a></li>
+      <li class="mobile-nav__item"><a class="mobile-nav__link" data-nav-link="services" href="services.html"><span class="num">03</span>サービス</a></li>
+      <li class="mobile-nav__item"><a class="mobile-nav__link" data-nav-link="voice" href="voice.html"><span class="num">04</span>お客様の声</a></li>
+      <li class="mobile-nav__item"><a class="mobile-nav__link" data-nav-link="blog" href="blog.html"><span class="num">05</span>ブログ</a></li>
+      <li class="mobile-nav__item"><a class="mobile-nav__link" data-nav-link="contact" href="contact.html"><span class="num">06</span>お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <div class="mobile-nav__foot">
+    <span>〒000-0000 架空県つむぎ市緑町1-2-3</span>
+    <a href="tel:0120123456">0120-123-456(受付 9:00-18:00)</a>
+  </div>
+</div>

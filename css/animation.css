@@ -1,0 +1,76 @@
+/* ============================================================
+   アニメーション補助スタイル
+   JS(animation.js/transition.js)が正常に動く場合のみ、これらの
+   クラスを付与して要素を初期非表示にする。CSSのデフォルトでは
+   常にコンテンツが見える状態を保つ(JS失敗時のフェイルセーフ)。
+   ============================================================ */
+
+/* JSが要素に付与する「アニメーション対象」クラス。
+   このクラスが付いた瞬間だけ初期状態(非表示)になる。 */
+.js-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.js-fade {
+  opacity: 0;
+}
+.js-fade-up.is-ready,
+.js-fade.is-ready {
+  transition: opacity var(--dur-mid) var(--ease-out), transform var(--dur-mid) var(--ease-out);
+}
+
+/* アイコンのポップイン(選ばれる理由) */
+.js-icon-pop { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+
+/* カードの沈み込みスケールイン(お客様の声) */
+.js-scale-in { opacity: 0; transform: scale(0.92); }
+
+/* 横スライドイン(家づくりの流れ) */
+.js-slide-right { opacity: 0; transform: translateX(-28px); }
+
+/* 写真のワイプリビール(サービス・施工事例・会社概要) */
+.js-reveal img { clip-path: inset(0 100% 0 0); }
+
+/* prefers-reduced-motion では即時表示にフォールバック */
+@media (prefers-reduced-motion: reduce) {
+  .js-fade-up, .js-fade, .js-icon-pop, .js-scale-in, .js-slide-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .js-reveal img { clip-path: inset(0) !important; }
+}
+
+/* ---- ページ遷移オーバーレイ ---- */
+/* デフォルトは非表示。JSが初期化に成功した時だけ .js-enabled が
+   html要素に付与され、遷移時にオーバーレイを操作する。 */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--color-overlay);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.36s var(--ease-out);
+}
+.page-transition-overlay.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ---- ヒーロー内テキストのタイムライン用初期状態 ---- */
+.hero__eyebrow.js-anim,
+.hero__title.js-anim,
+.hero__lead.js-anim,
+.hero__cta.js-anim {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+/* ---- モバイルナビ項目 stagger 初期状態 ---- */
+.mobile-nav__list.js-anim .mobile-nav__item {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* ---- カウントアップ ---- */
+.stat__num[data-count] { font-variant-numeric: tabular-nums; }

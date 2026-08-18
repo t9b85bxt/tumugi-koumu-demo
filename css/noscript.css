@@ -1,0 +1,5 @@
+/* JS無効時のフォールバック: アニメーション対象要素を常時表示にする */
+.js-fade-up, .js-fade, .js-icon-pop, .js-scale-in, .js-slide-right { opacity: 1 !important; transform: none !important; }
+.js-reveal img { clip-path: inset(0) !important; }
+.page-transition-overlay { display: none !important; }
+.mobile-nav { display: none !important; }
