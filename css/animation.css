@@ -31,9 +31,12 @@
 /* 写真のワイプリビール(サービス・施工事例・会社概要) */
 .js-reveal img { clip-path: inset(0 100% 0 0); }
 
+/* Bento Grid(選ばれる理由)の格子状ポップイン */
+.js-bento-in { opacity: 0; transform: translateY(20px) scale(0.96); }
+
 /* prefers-reduced-motion では即時表示にフォールバック */
 @media (prefers-reduced-motion: reduce) {
-  .js-fade-up, .js-fade, .js-icon-pop, .js-scale-in, .js-slide-right {
+  .js-fade-up, .js-fade, .js-icon-pop, .js-scale-in, .js-slide-right, .js-bento-in {
     opacity: 1 !important;
     transform: none !important;
   }

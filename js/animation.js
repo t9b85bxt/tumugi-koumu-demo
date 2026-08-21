@@ -53,6 +53,37 @@
     });
   }
 
+  function initBentoStagger() {
+    var items = gsap.utils.toArray('.js-bento-in');
+    if (!items.length) return;
+    ScrollTrigger.batch(items, {
+      start: 'top 88%',
+      onEnter: function (batch) {
+        gsap.to(batch, {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.5,
+          stagger: { each: 0.07, from: 'start', grid: 'auto' },
+          ease: 'back.out(1.4)',
+          overwrite: true,
+        });
+      },
+      once: true,
+    });
+  }
+
+  function initHeroParallax() {
+    var hero = document.querySelector('.hero');
+    var media = hero && hero.querySelector('.hero__media img');
+    if (!hero || !media) return;
+    gsap.to(media, {
+      yPercent: 10,
+      ease: 'none',
+      scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
+    });
+  }
+
   function initSlideRight() {
     var els = gsap.utils.toArray('.js-slide-right');
     if (!els.length) return;
@@ -130,7 +161,7 @@
     // 永久に隠れたままにならないよう救済する。
     // ただし「まだ画面外でスクロールしていないだけ」の要素まで強制表示すると
     // スクロール演出が意味をなさなくなるため、画面内に入っている要素だけを対象にする。
-    var selector = '.js-fade-up, .js-fade, .js-icon-pop, .js-scale-in, .js-slide-right';
+    var selector = '.js-fade-up, .js-fade, .js-icon-pop, .js-scale-in, .js-slide-right, .js-bento-in';
     var ticking = false;
     function rescue() {
       ticking = false;
@@ -241,7 +272,9 @@
     }
 
     initHero();
+    initHeroParallax();
     initFadeUp();
+    initBentoStagger();
     initIconPop();
     initScaleIn();
     initSlideRight();
