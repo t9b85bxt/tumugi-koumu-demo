@@ -693,6 +693,7 @@ fieldset { border: none; padding: 0; }
 .compare__handle {
   position: absolute; top: 0; bottom: 0; left: 50%;
   width: 100%;
+  transform: translateX(-50%);
   -webkit-appearance: none; appearance: none;
   background: transparent;
   cursor: ew-resize;
@@ -705,6 +706,7 @@ fieldset { border: none; padding: 0; }
 
 /* ---- Not found ---- */
 .not-found { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: var(--header-h); }
+.not-found > * { max-width: 100%; }
 .not-found__code { font-family: var(--font-heading); font-size: clamp(4rem, 14vw, 8rem); color: var(--color-accent-tint); line-height: 1; }
 
 /* ---- Filter tags ---- */
@@ -822,6 +824,7 @@ fieldset { border: none; padding: 0; }
   padding: 28px 32px;
   margin-top: var(--space-lg);
 }
+.cta-banner__text { min-width: 0; }
 .cta-banner__text h3 { margin-bottom: 4px; }
 .cta-banner__text p { color: var(--color-text-sub); font-size: var(--fs-small); }
 .cta-banner__actions { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -834,6 +837,7 @@ fieldset { border: none; padding: 0; }
 
 /* ---- Digest split (会社概要ダイジェスト) ---- */
 .split { display: grid; gap: var(--space-xl); grid-template-columns: 1fr; align-items: center; }
+.split > * { min-width: 0; }
 @media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; } }
 .split__media { border-radius: var(--radius-card); overflow: hidden; aspect-ratio: 4/3; }
 .split__media img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
@@ -1132,8 +1136,7 @@ fieldset { border: none; padding: 0; }
   .hero__inner {
     border-left: 2px solid rgba(255,255,255,0.35);
     padding-left: 30px;
-    padding-block: 0 var(--space-xl);
-    min-height: 690px;
+    padding-block: 0 calc(120px + var(--space-xl));
   }
 }
 .hero__title { letter-spacing: 0.02em; }
@@ -1207,7 +1210,7 @@ fieldset { border: none; padding: 0; }
   overflow: hidden;
   border-color: transparent;
 }
-@media (max-width: 560px) { .bento-item--lg { grid-row: span 1; min-height: 320px; } }
+@media (max-width: 560px) { .bento-item--lg { grid-column: span 1; grid-row: span 1; min-height: 320px; } }
 .bento-item--lg img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;
   transition: transform 0.6s var(--ease-out);
